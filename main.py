@@ -56,5 +56,23 @@ def create_app(settings=None) -> Flask:
 app = create_app()
 
 
+@click.command()
+@click.option("--demo", is_flag=True, help="Открыть локальный читальный зал с учебным входом.")
+def run(demo: bool) -> None:
+    if not demo:
+        app.run(host="127.0.0.1")
+        return
+
+    demo_password = "reading-demo"
+    reading_room = create_app({
+        "READING_USER": "reader",
+        "READING_PASSWORD_HASH": generate_password_hash(demo_password),
+        "SECRET_KEY": token_hex(32),
+        "SESSION_COOKIE_SECURE": False,
+    })
+    click.echo(f"Вход в читальный зал — reader, пароль — {demo_password}")
+    reading_room.run(host="127.0.0.1")
+
+
 if __name__ == "__main__":
-    app.run()
+    run()
