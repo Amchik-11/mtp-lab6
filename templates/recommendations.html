@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}Советы по чтению{% endblock %}
+{% block content %}
+  <h1>Советы по чтению</h1>
+  {% for title, author, comment in books %}
+    <article>
+      <h2>{{ title }}</h2>
+      <p><strong>{{ author }}</strong> · {{ comment }}</p>
+    </article>
+  {% else %}
+    <p>Подборка пока пуста.</p>
+  {% endfor %}
+{% endblock %}

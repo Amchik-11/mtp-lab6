@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block title %}Читальный зал{% endblock %}
+{% block content %}
+  <h1>Читальный зал</h1>
+  <p>Добро пожаловать, <strong>{{ reader }}</strong>!</p>
+  <form method="post" action="{{ url_for('access.logout') }}">
+    <input type="hidden" name="token" value="{{ session.form_token }}">
+    <button>Выйти</button>
+  </form>
+{% endblock %}
