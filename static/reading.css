@@ -1,0 +1,11 @@
+:root { color: #2e2930; background: #f5eee4; font: 1rem/1.55 system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 43rem; margin: 2.5rem auto; padding: 1.5rem; border-top: .4rem solid #774a62; background: #fffdfa; }
+h1, h2 { font-family: Georgia, serif; line-height: 1.15; }
+.kicker { color: #655465; font-size: .9rem; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+a { color: #653351; }
+article + article { border-top: 1px solid #e6d9de; }
+label { display: block; margin-bottom: .8rem; }
+input, button { padding: .4rem; font: inherit; }
+.error { color: #a02b38; }
