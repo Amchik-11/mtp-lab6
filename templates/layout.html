@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} · Книжная гостиная</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='reading.css') }}">
+</head>
+<body>
+  <main>
+    <p><a href="{{ url_for('home') }}">← В гостиную</a></p>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
